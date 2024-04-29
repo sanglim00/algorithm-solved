@@ -6,7 +6,7 @@ function solution(players, callings) {
         myMap.set(item, idx);
     })
 
-    callings.forEach((item, idx2) => {
+    callings.forEach((item) => {
         let idx = myMap.get(item);
 
         let temp = players[idx -1];
