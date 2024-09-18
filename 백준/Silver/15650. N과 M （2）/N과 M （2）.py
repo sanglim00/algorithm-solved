@@ -13,9 +13,7 @@ def backtracking(start, idx):
     
     for i in range(start, N+1):
         if not visited[i]:
-            visited[i] = 1
             graph_[idx] = i
             backtracking(i+1, idx+1)
-            visited[i] = 0
 
 backtracking(1, 0)
