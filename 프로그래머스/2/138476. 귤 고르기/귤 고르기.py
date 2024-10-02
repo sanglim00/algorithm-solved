@@ -3,15 +3,11 @@ def solution(k, tangerine):
     
     myDict = {}
     for i in tangerine:
-        if i not in myDict:
-            myDict[i] = 1
-        else:
-            myDict[i] += 1
-    
+        if i not in myDict: myDict[i] = 1
+        else: myDict[i] += 1
+        
     arr = sorted(list(map(int, myDict.values())))
-    
-    _sum = 0
-    idx = len(arr) - 1
+    _sum, idx = 0, len(arr) - 1
 
     while _sum < k :
         _sum += arr[idx]
