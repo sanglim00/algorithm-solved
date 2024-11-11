@@ -5,7 +5,6 @@ n = int(sys.stdin.readline())
 m = int(sys.stdin.readline())
 
 graph = [[] for _ in range(n+1)]
-visited = [0 for _ in range(n+1)]
 dist = [(-1, float('INF')) for _ in range(n+1)]
 
 for _ in range(m):
@@ -16,7 +15,6 @@ v1, v2 = map(int, sys.stdin.readline().split())
 
 heap = [(0, v1)]
 dist[v1] = (0, 0)
-visited[v1] = 1
 
 while heap:
     n_cost, n_node = heapq.heappop(heap)
@@ -27,7 +25,6 @@ while heap:
         all_cost = n_cost + cost
 
         if all_cost < dist[node][1]:
-            visited[node] = visited[n_node] + 1
             dist[node] = (n_node, all_cost)
 
             heapq.heappush(heap, (all_cost, node))
