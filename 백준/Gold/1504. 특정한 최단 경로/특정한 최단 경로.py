@@ -10,12 +10,11 @@ for _ in range(M):
     graph[b].append((a, c))
 
 v1, v2 = map(int, sys.stdin.readline().split())
-INF = int(1e9)
 
 def dijkstra(start, end):
 
     heap = [(start, 0)]
-    dist = [INF for _ in range(N+1)]
+    dist = [float("INF") for _ in range(N+1)]
     dist[start] = 0
 
     while heap:
@@ -35,4 +34,4 @@ def dijkstra(start, end):
 ans = dijkstra(1, v1) + dijkstra(v1, v2) + dijkstra(v2, N)
 ans2 = dijkstra(1, v2) + dijkstra(v2, v1) + dijkstra(v1, N)
 
-print(min(ans, ans2) if min(ans, ans2) < INF else -1)
+print(min(ans, ans2) if min(ans, ans2) < float("INF") else -1)
