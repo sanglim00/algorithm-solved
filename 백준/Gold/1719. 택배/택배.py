@@ -24,10 +24,9 @@ def dijkstra(i, j):
             all_cost = now_cost + cost
 
             if dist[next_x][now_x][1] > all_cost:
-                if now_y==now_x: dist[next_x][now_x] = (now_y, all_cost)
                 dist[next_x][now_x] = (now_y, all_cost)
                 heapq.heappush(heap, (all_cost, now_x, next_x))
-    
+
 for i in range(1, N+1): dijkstra(i, i)
 for i in range(1, N+1):
     for j in range(1, N+1):
