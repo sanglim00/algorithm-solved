@@ -21,11 +21,11 @@ def backtracking(graph, visited, py, px, cnt, now):
 
         if 0<=ny<NUM and 0<=nx<NUM:
             if not visited[ny][nx] and graph[ny][nx] != -1:
-                visited[ny][nx] = visited[py][px] + 1
+                visited[ny][nx] = 1
                 if graph[ny][nx]: cnt += 1
                 backtracking(graph, visited, ny, nx, cnt, now+1)
                 if graph[ny][nx]: cnt -= 1
-                visited[ny][nx] = visited[py][px] - 1
+                visited[ny][nx] = 0
 
     return check
 
