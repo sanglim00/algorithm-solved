@@ -17,9 +17,6 @@ while True:
         graph[B].append((A, C))
         init_cost += C
 
-    
-    
-
     heap = [(0, 0)]
     sum_cost = 0
 
