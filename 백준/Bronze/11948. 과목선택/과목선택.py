@@ -1,0 +1,10 @@
+A = int(input())
+B = int(input())
+C = int(input())
+D = int(input())
+E = int(input())
+F = int(input())
+
+score = A+B+C+D-min(min(A, B), min(C, D))
+score += max(E, F)
+print(score)
